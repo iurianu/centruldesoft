@@ -1,0 +1,108 @@
+.container-cta {
+    width: 100%;
+    .cta-header {
+        @extend %flex-container;
+        .col-lg-4 {
+            background-color: $theme-yellow;
+            padding: 30px 15px 10px;
+            color: #FFF;
+            h4 {
+                font-size: 28px;
+                text-align: center;
+            }
+            p {
+                font-size: 13px;
+            }
+        }        
+    }
+    .cta-content {
+        width: 100%;
+        background-image: url("../images/footer-banner.jpg");
+        background-size: cover;
+        background-color: transparent;
+        background-position: top center;
+        background-repeat: no-repeat;
+        padding-bottom: 80px;
+        #cta-form {
+            background-color: #FFF;
+            padding: 30px;
+            button {
+                &[type="submit"] {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+            select {
+                option {
+                    &[disabled] {
+                        background-color: $theme-light-grey;
+                        color: $theme-grey;
+                    }
+                }
+            }
+        }
+    }
+}
+
+div {
+    &.checkbox {
+        margin-bottom: 4rem;
+        input {
+            &[type="checkbox"] {
+                float: left;
+                display: block;
+            }
+        }
+        label {
+            float: left;
+            display: block;
+            width: calc(100% - 30px);
+            margin-left: 10px;
+            font-size: 10px;
+            line-height: 1em;
+        }
+    }
+}
+
+.modal {
+    top: 130px; 
+    @include for-phone-only {
+        padding-right: 0 !important;
+        top: 65px !important;
+    }
+    @include for-tablet-landscape-up {
+        top: 100px;
+    }
+    .modal-header {
+        display: block;
+        background-color: $theme-yellow;
+        padding: 30px 30px 10px;
+        color: #FFF;
+        text-align: center;
+        .close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+        }
+        h4 {
+            font-size: 28px;
+        }
+        p {
+            font-size: 13px;
+        }
+    }
+    .modal-content {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        @include for-phone-only {
+            width: 90%;
+        }
+    }
+    button {
+        &[type="submit"] {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}

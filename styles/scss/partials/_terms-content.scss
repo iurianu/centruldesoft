@@ -1,0 +1,84 @@
+.jumbotron {    
+    width: 100%;
+    padding: 15px;
+    background-color: $theme-yellow;
+    background-image: url("../images/banner.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    .container {
+        @extend %flex-container;
+        figure {
+            img {
+                max-width: 100%;
+            }
+            &.check-succes {
+                width: 100%;
+                img {
+                    display: block;
+                    width: 30%;
+                    margin: 0 auto;
+                    @include for-tablet-landscape-up {
+                        width: 20%;
+                    }
+                }
+            }
+        }
+        h2 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #FFF;
+        }
+        h3 {
+            text-align: left;
+            font-size: 30px;
+            line-height: 2.5rem;
+            &:after {
+                border: none;
+            }
+            @include for-tablet-portrait-down {
+                font-size: 22px;
+            }
+        }
+    }
+    &.thank-you-container {
+        margin-bottom: 0;
+        padding-top: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        h1 {
+            @include for-tablet-portrait-up {
+                @include for-tablet-landscape-down {
+                    font-size: 2rem;
+                    padding-top: 5rem;
+                }                
+            }
+            @include for-tablet-landscape-up {
+                padding-top: 7rem;
+            }
+            @include for-desktop-up {
+                font-size: 3rem;
+                padding-top: 9rem;
+            }
+            
+        }
+        .container {
+            h2 {
+                display: block;
+                margin: 0 auto;
+                font-size: 1.5rem;
+                @include not-for-phones {
+                    font-size: 2rem;
+                }
+            }
+            h3 {
+                color: #FFF;
+                text-align: center;
+                line-height: 1;
+            }
+            .btn {
+                margin: 0 auto;
+            }
+        }
+    }
+
+}

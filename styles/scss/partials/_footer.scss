@@ -1,0 +1,15 @@
+footer {
+    background-color: $theme-grey;
+    padding: 1rem;
+    font-size: 12px;
+    .container {
+        @extend %flex-container;
+        .col-lg-4 {
+            text-align: center;
+            line-height: 1.5rem;
+            a {
+                color: $theme-light-grey;
+            }
+        }
+    }
+}

@@ -1,0 +1,175 @@
+$theme-grey:        #333333;
+$theme-light-grey:  #efefef;
+$theme-dark-grey:   #252525;
+$theme-yellow:      #ffc935;
+
+@mixin for-phone-only {
+  @media (max-width: 575px)  { @content; }
+}
+@mixin for-tablet-portrait-down {
+  @media (max-width: 767px)  { @content; }
+}
+@mixin for-tablet-landscape-down {
+  @media (max-width: 991px)  { @content; }
+}
+@mixin for-desktop-down {
+  @media (max-width: 1199px) { @content; }
+}
+@mixin not-for-phones {
+  @media (min-width: 576px)  { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 768px)  { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 992px)  { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
+%flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+html, body {
+    font-family: "Exo", sans-serif;
+    color: $theme-grey;
+    min-height: 100%;
+    margin: 0;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 400;
+    //color: $theme-grey;
+}
+
+h1 {
+    padding-top: 2.5rem;
+    font-weight: 700;
+    @include for-phone-only {
+        font-size: 1.5rem;
+    }
+}
+
+h2 {
+    font-weight: 400;
+    @include for-phone-only {
+        font-size: 1.5rem;
+    }
+}
+
+h3 {
+    display: block;
+    position: relative;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin: 2rem auto 3rem;
+    &:after {
+        position: absolute;
+        content: "";
+        text-align: center;
+        top: 2rem;
+        left: calc(50% - 40px);
+        border-bottom: 3px solid $theme-yellow;
+        width: 80px;
+        @include for-phone-only {
+            top: 3rem;
+        }
+        
+    }
+}
+
+h4 {
+    font-size: 17px;
+    font-weight: 700;
+   // color: $theme-grey;
+}
+
+.font-weight-bold {
+    font-size: 2rem;
+    color: $theme-yellow;
+    sub {
+        font-size: 50%;
+    }
+    @include for-phone-only {
+        font-size: 1.2rem;
+    }
+}
+
+.btn {
+    padding: .375rem 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    &.btn-secondary {
+        background-color: $theme-grey;
+        &:hover, &:focus, &:active {
+            color: $theme-yellow;
+        }
+    }
+    &.btn-warning {
+        background-color: $theme-yellow;
+        &:hover, &:focus, &:active {
+            color: $theme-grey;
+        }
+    }
+    &.btn-light {
+        color: $theme-grey;
+        &:hover, &:focus, &:active {
+            color: $theme-yellow;
+        }
+    }
+}
+
+.button-divider {
+    display: inline-block;
+    background-color: transparent;
+    color: transparent;
+    margin-right: 1rem;
+}
+
+.yellow-bg {
+    background-color: $theme-yellow;
+    color: #FFF;
+}
+
+ul {
+    &.pointed {
+        li {
+            position: relative;
+            margin-left: -15px;
+            &:before {
+                position: absolute;
+                display: block;
+                content: "";
+                background: url(../images/checked.png);
+                width: 15px;
+                height: 15px;
+                background-size: contain;
+                left: -1.5rem;
+                top: 0.2rem;
+            }
+        }
+    }
+}
+
+.hidden-mobile {
+    @include for-phone-only {display: none;}
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    .hidden-tablet {display: none;}
+}
+
+.hidden-desktop {
+    @include for-tablet-landscape-up {display: none;}
+}

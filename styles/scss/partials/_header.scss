@@ -1,0 +1,95 @@
+header {
+    height: 100px;
+    background-color: #FFF;
+    padding: 30px 0 10px;
+    z-index: 1200;
+    .container {
+        @extend %flex-container;
+    }
+    .logo {        
+        .logo-image {
+            max-width: 80%;
+            @include for-phone-only {
+                width: 95%;
+                margin: 0 auto;
+            }
+            a {
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+        
+    }
+    .cta {
+        padding-top: 0.5rem;
+        text-align: right;
+        @include for-tablet-portrait-down {
+            text-align: left;
+        }
+        .btn {
+            @include for-phone-only {
+                width: 95%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+    .button-divider {
+        @include for-phone-only {
+            display: block;
+            margin-top: 0.25rem;
+        }
+    }
+    @include for-phone-only {
+        height: 60px;
+        padding-top: 10px;
+    }
+    @include not-for-phones {
+        @include for-tablet-portrait-down {
+            height: 150px;
+        }
+    }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + main {
+  padding-top: 100px;
+    @include for-phone-only {
+        padding-top: 60px;
+    }
+    @include not-for-phones {
+        @include for-tablet-portrait-down {
+            padding-top: 150px;
+        }
+    }    
+}
+
+.thank-you-header {
+    height: auto;
+    padding: 10px 0 0;
+    .logo {
+        .logo-image {
+            min-width: 100%;
+            img {
+                display: block;                
+                margin: 0 auto;
+                max-width: 80%;
+                @include for-tablet-portrait-up {
+                    max-width: 60%;
+                }
+                @include for-tablet-landscape-up {
+                    max-width: 45%;
+                }
+                @include for-desktop-up {
+                    max-width: 30%;
+                }
+            }
+        }
+    }
+}
